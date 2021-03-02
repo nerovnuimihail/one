@@ -21,8 +21,13 @@ const personalMovieDB = {
 for (let i = 0; i < 3; i++ ) {
     const a = prompt('Один из просмотренных фильмов', ''),
           b = prompt('На сколько оцените его', '');
-    personalMovieDB.movies[a] = b;
-        }
+
+    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+        personalMovieDB.movies[a] = b;
+    } else {
+        i--;
+    }
+}
 
 if (personalMovieDB.count < 10) {
     console.log('Просмотренно мало фильмов!');
