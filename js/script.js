@@ -18,31 +18,11 @@ const personalMovieDB = {
 //console.log(personalMovieDB);
 
 
-let a, b, c, d;
-
-for (let i = 0; i < 4; i++ ) {
-    if (i == 0) {
-        a = prompt('Один из просмотренных фильмов', '');
-        while (a.length == 0 || a.length > 50) {
-            a = prompt('Один из просмотренных фильмов', '');
+for (let i = 0; i < 3; i++ ) {
+    const a = prompt('Один из просмотренных фильмов', ''),
+          b = prompt('На сколько оцените его', '');
+    personalMovieDB.movies[a] = b;
         }
-    } else if (i == 1) {
-            b = prompt('На сколько оцените его', '');
-            while (b.length == 0 || b.length > 50) {
-                b = prompt('На сколько оцените его', '');
-            }
-        } else if (i == 2) {
-                c = prompt('Один из просмотренных фильмов', '');
-                while (c.length == 0 || c.length > 50) {
-                    c = prompt('Один из просмотренных фильмов', ''); 
-                }   
-            } else if (i == 3) {
-                    d = prompt('На сколько оцените его', '');
-                    while (d.length == 0 || d.length > 50) {
-                        d = prompt('На сколько оцените его', '');
-                    }
-                }
-            }
 
 if (personalMovieDB.count < 10) {
     console.log('Просмотренно мало фильмов!');
@@ -53,8 +33,5 @@ if (personalMovieDB.count < 10) {
 } else {
     console.log('Произошла ошибка');
 }
-
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
 
 console.log(personalMovieDB);
